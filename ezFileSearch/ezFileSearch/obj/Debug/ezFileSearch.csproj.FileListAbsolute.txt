@@ -29,3 +29,4 @@ D:\devcode\adm_ist\ezFileSearch\ezFileSearch\ezFileSearch\obj\Debug\ezFileSearch
 D:\devcode\adm_ist\ezFileSearch\ezFileSearch\ezFileSearch\obj\Debug\ezFileSearch.csproj.CopyComplete
 D:\devcode\adm_ist\ezFileSearch\ezFileSearch\ezFileSearch\obj\Debug\ezFileSearch.exe
 D:\devcode\adm_ist\ezFileSearch\ezFileSearch\ezFileSearch\obj\Debug\ezFileSearch.pdb
+D:\devcode\adm_ist\ezFileSearch\ezFileSearch\ezFileSearch\obj\Debug\ezFileSearch.csprojAssemblyReference.cache
