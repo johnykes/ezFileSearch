@@ -1,8 +1,9 @@
 ###########################################################################################
 # ezFileSearch
-This (c# win forms) tool searches for local or remote files by server name(s), location(s) and file pattern(s).
+This (c# win forms) tool searches for local or remote files by server name(s), location(s), file pattern(s) and file data.
 The found files can be then
 bulk or individually opened using one of the available portable editors.
+The found file data can be easily replaced.
 
 ## Editors
 Atom      (portable, from **garethflowers/atom-portable/releases**),                       
