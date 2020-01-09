@@ -167,6 +167,8 @@ namespace ezFileSearch
             this.cb_editor.BackColor         = Color.FromArgb(51, 56, 66);
             this.tb_text.BackColor           = Color.FromArgb(51, 56, 66);
             this.tb_newText.BackColor        = Color.FromArgb(51, 56, 66);
+            //this.progressBar0.BackColor      = Color.FromArgb(51, 56, 66);
+            //this.progressBar0.ForeColor = Color.FromArgb(51, 56, 66);
         }
 
 

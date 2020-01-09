@@ -48,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_serverList = new System.Windows.Forms.TextBox();
             this.panel_dynamic = new System.Windows.Forms.Panel();
+            this.progressBar0 = new System.Windows.Forms.ProgressBar();
             this.panel_general.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_replaceText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_findFiles)).BeginInit();
@@ -87,7 +88,7 @@
             this.label_replaceText.Location = new System.Drawing.Point(276, 532);
             this.label_replaceText.Name = "label_replaceText";
             this.label_replaceText.Size = new System.Drawing.Size(68, 20);
-            this.label_replaceText.TabIndex = 21;
+            this.label_replaceText.TabIndex = 6;
             this.label_replaceText.Text = "replace";
             this.label_replaceText.Click += new System.EventHandler(this.label_replaceText_Click);
             // 
@@ -121,7 +122,7 @@
             this.label_findFiles.Location = new System.Drawing.Point(272, 432);
             this.label_findFiles.Name = "label_findFiles";
             this.label_findFiles.Size = new System.Drawing.Size(77, 20);
-            this.label_findFiles.TabIndex = 19;
+            this.label_findFiles.TabIndex = 4;
             this.label_findFiles.Text = "find files";
             this.label_findFiles.Click += new System.EventHandler(this.label_findFiles_Click);
             // 
@@ -158,7 +159,7 @@
             this.tb_newText.Name = "tb_newText";
             this.tb_newText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tb_newText.Size = new System.Drawing.Size(357, 59);
-            this.tb_newText.TabIndex = 15;
+            this.tb_newText.TabIndex = 5;
             // 
             // label5
             // 
@@ -182,7 +183,7 @@
             this.tb_text.Name = "tb_text";
             this.tb_text.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tb_text.Size = new System.Drawing.Size(357, 59);
-            this.tb_text.TabIndex = 13;
+            this.tb_text.TabIndex = 3;
             // 
             // label4
             // 
@@ -208,7 +209,7 @@
             this.cb_editor.Location = new System.Drawing.Point(3, 561);
             this.cb_editor.Name = "cb_editor";
             this.cb_editor.Size = new System.Drawing.Size(357, 28);
-            this.cb_editor.TabIndex = 11;
+            this.cb_editor.TabIndex = 7;
             this.cb_editor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_editor_KeyPress);
             // 
             // label3
@@ -233,7 +234,7 @@
             this.tb_patternList.Name = "tb_patternList";
             this.tb_patternList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tb_patternList.Size = new System.Drawing.Size(357, 59);
-            this.tb_patternList.TabIndex = 4;
+            this.tb_patternList.TabIndex = 2;
             // 
             // label2
             // 
@@ -257,7 +258,7 @@
             this.tb_locationList.Name = "tb_locationList";
             this.tb_locationList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tb_locationList.Size = new System.Drawing.Size(357, 58);
-            this.tb_locationList.TabIndex = 2;
+            this.tb_locationList.TabIndex = 1;
             // 
             // label1
             // 
@@ -294,14 +295,25 @@
             this.panel_dynamic.Size = new System.Drawing.Size(407, 595);
             this.panel_dynamic.TabIndex = 7;
             // 
+            // progressBar0
+            // 
+            this.progressBar0.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.progressBar0.ForeColor = System.Drawing.Color.Lime;
+            this.progressBar0.Location = new System.Drawing.Point(87, 15);
+            this.progressBar0.Name = "progressBar0";
+            this.progressBar0.Size = new System.Drawing.Size(285, 17);
+            this.progressBar0.TabIndex = 0;
+            this.progressBar0.Visible = false;
+            // 
             // form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 610);
-            this.Controls.Add(this.panel_dynamic);
+            this.Controls.Add(this.progressBar0);
             this.Controls.Add(this.panel_general);
+            this.Controls.Add(this.panel_dynamic);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_main";
             this.Text = "ezFileSearch";
@@ -336,6 +348,7 @@
         private System.Windows.Forms.PictureBox pb_findFiles;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_newText;
+        private System.Windows.Forms.ProgressBar progressBar0;
     }
 }
 
