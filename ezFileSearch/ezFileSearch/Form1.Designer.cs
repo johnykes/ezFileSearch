@@ -57,6 +57,7 @@
             // panel_general
             // 
             this.panel_general.BackColor = System.Drawing.Color.Transparent;
+            this.panel_general.Controls.Add(this.progressBar0);
             this.panel_general.Controls.Add(this.label_replaceText);
             this.panel_general.Controls.Add(this.pb_replaceText);
             this.panel_general.Controls.Add(this.btn_test);
@@ -74,7 +75,7 @@
             this.panel_general.Controls.Add(this.tb_locationList);
             this.panel_general.Controls.Add(this.label1);
             this.panel_general.Controls.Add(this.tb_serverList);
-            this.panel_general.Location = new System.Drawing.Point(12, 12);
+            this.panel_general.Location = new System.Drawing.Point(3, 2);
             this.panel_general.Name = "panel_general";
             this.panel_general.Size = new System.Drawing.Size(363, 594);
             this.panel_general.TabIndex = 1;
@@ -290,16 +291,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_dynamic.AutoScroll = true;
-            this.panel_dynamic.Location = new System.Drawing.Point(381, 12);
+            this.panel_dynamic.Location = new System.Drawing.Point(372, 2);
             this.panel_dynamic.Name = "panel_dynamic";
-            this.panel_dynamic.Size = new System.Drawing.Size(407, 595);
+            this.panel_dynamic.Size = new System.Drawing.Size(379, 594);
             this.panel_dynamic.TabIndex = 7;
             // 
             // progressBar0
             // 
             this.progressBar0.BackColor = System.Drawing.Color.DarkSlateGray;
             this.progressBar0.ForeColor = System.Drawing.Color.Lime;
-            this.progressBar0.Location = new System.Drawing.Point(87, 15);
+            this.progressBar0.Location = new System.Drawing.Point(75, 1);
             this.progressBar0.Name = "progressBar0";
             this.progressBar0.Size = new System.Drawing.Size(285, 17);
             this.progressBar0.TabIndex = 0;
@@ -310,8 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(800, 610);
-            this.Controls.Add(this.progressBar0);
+            this.ClientSize = new System.Drawing.Size(756, 598);
             this.Controls.Add(this.panel_general);
             this.Controls.Add(this.panel_dynamic);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
