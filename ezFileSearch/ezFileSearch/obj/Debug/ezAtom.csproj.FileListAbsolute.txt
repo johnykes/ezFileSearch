@@ -1,0 +1,16 @@
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\ezAtom.exe.config
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\ezAtom.exe
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\ezAtom.pdb
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.csprojAssemblyReference.cache
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.form_main.resources
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.Properties.Resources.resources
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.csproj.GenerateResource.cache
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.csproj.CoreCompileInputs.cache
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.exe
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.pdb
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\System.Management.Automation.dll
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\Microsoft.Management.Infrastructure.dll
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\System.Management.Automation.xml
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\obj\Debug\ezAtom.csproj.CopyComplete
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\Newtonsoft.Json.dll
+D:\devcode\adm_ist\ezAtom\ezAtom\ezAtom\bin\Debug\Newtonsoft.Json.xml

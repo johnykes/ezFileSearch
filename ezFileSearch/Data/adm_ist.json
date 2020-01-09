@@ -1,0 +1,14 @@
+{
+  "servers": [
+    "vitsql2016001",
+    "vitsql2017001"
+  ],
+  "locations": [
+    "C:\\temp",
+    "C:\\tsm"
+  ],
+  "patterns": [
+    "*.opt"
+  ],
+  "editorIdx": 0
+}
