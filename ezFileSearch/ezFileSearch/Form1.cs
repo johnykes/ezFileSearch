@@ -137,6 +137,9 @@ namespace ezFileSearch
                     tb_patternList.AppendText(data + Environment.NewLine);
                 }
 
+                tb_text.Text    = (string)o["text"];
+                tb_newText.Text = (string)o["newText"];
+
                 cb_editor.SelectedIndex = ((JToken)o["editorIdx"]).ToObject<int>();
             }
             catch
@@ -155,32 +158,49 @@ namespace ezFileSearch
         private void form_main_Load(object sender, EventArgs e)
         {
             // set theme similar to atom one dark
-            this.BackColor = Color.FromArgb(40, 44, 52);
-            this.tb_serverList.BackColor   = Color.FromArgb(51, 56, 66);
-            this.tb_locationList.BackColor = Color.FromArgb(51, 56, 66);
-            this.tb_patternList.BackColor  = Color.FromArgb(51, 56, 66);
-            this.label_find_files.BackColor   = Color.FromArgb(51, 56, 66);
-            this.cb_editor.BackColor = Color.FromArgb(51, 56, 66);
-            
+            this.BackColor                   = Color.FromArgb(40, 44, 52);
+            this.tb_serverList.BackColor     = Color.FromArgb(51, 56, 66);
+            this.tb_locationList.BackColor   = Color.FromArgb(51, 56, 66);
+            this.tb_patternList.BackColor    = Color.FromArgb(51, 56, 66);
+            this.label_findFiles.BackColor   = Color.FromArgb(51, 56, 66);
+            this.label_replaceText.BackColor = Color.FromArgb(51, 56, 66);
+            this.cb_editor.BackColor         = Color.FromArgb(51, 56, 66);
+            this.tb_text.BackColor           = Color.FromArgb(51, 56, 66);
+            this.tb_newText.BackColor        = Color.FromArgb(51, 56, 66);
         }
 
 
         #region UI
         #region find files
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pb_findFiles_Click(object sender, EventArgs e)
         {
             BackgroundWorker worker = new BackgroundWorker();
             worker.DoWork += findFiles;
             worker.RunWorkerAsync();
         }
 
-        private void label_find_files_Click(object sender, EventArgs e)
+        private void label_findFiles_Click(object sender, EventArgs e)
         {
             BackgroundWorker worker = new BackgroundWorker();
             worker.DoWork += findFiles;
             worker.RunWorkerAsync();
         }
         #endregion find files
+        #region replace text
+        private void pb_replaceText_Click(object sender, EventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += replaceText;
+            worker.RunWorkerAsync();
+        }
+
+        private void label_replaceText_Click(object sender, EventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += replaceText;
+            worker.RunWorkerAsync();
+        }
+        #endregion replace text
         #region cb_editor_Safety
         private void cb_editor_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -196,6 +216,18 @@ namespace ezFileSearch
             string[] servers   = tb_serverList.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             string[] locations = tb_locationList.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             string[] patterns  = tb_patternList.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+            bool textFilter = false;
+            string text = string.Empty;
+            this.tb_text.Invoke(new MethodInvoker(delegate
+            {
+                if (tb_text.Text != string.Empty)
+                    textFilter = true;
+            }));
+            this.tb_text.Invoke(new MethodInvoker(delegate
+            {
+                text = tb_text.Text;
+            }));
 
             // remove empty lines
             servers = servers.Where(val => !string.IsNullOrEmpty(val)).Distinct().ToArray();
@@ -314,46 +346,91 @@ namespace ezFileSearch
                             // now, foreach file do the shit
                             foreach (var file in files)
                             {
-                                // create button and checkbox
-                                Button b = new Button();
-                                b.Text = file.Name;
-                                b.Name = serverTag + server + locationTag + location + fileTag + file.Name;
-                                b.AutoSize = true;
-                                b.ForeColor = Color.White;
-                                b.Font = new Font("Microsoft Sans Serif", 12f);
-                                b.Click += new EventHandler(openFiles_click);
-                                /*CheckBox c = new CheckBox();
-                                c.Checked = true;
-                                c.AutoSize = true;
-                                c.CheckedChanged += new EventHandler(checkedChanged_click);
-
-                                // set x si y for checkbox and button
-                                c.Location = new Point(x + 3*x_spacing, y + y_spacing/4);*/
-                                b.Location = new Point(x + 3*x_spacing, y); // *4 if checkbox
-
-                                // increment y
-                                y += y_spacing;
-
-                                this.panel_dynamic.Invoke(new MethodInvoker(delegate
+                                if(textFilter)
                                 {
-                                    //panel_dynamic.Controls.Add(c);
-                                }));
-                                this.panel_dynamic.Invoke(new MethodInvoker(delegate
-                                {
-                                    panel_dynamic.Controls.Add(b);
-                                }));
+                                    if(findTextInFile(file.FullName, text))
+                                    {
+                                        // create button and checkbox
+                                        Button b = new Button();
+                                        b.Text = file.Name;
+                                        b.Name = serverTag + server + locationTag + location + fileTag + file.Name;
+                                        b.AutoSize = true;
+                                        b.ForeColor = Color.White;
+                                        b.Font = new Font("Microsoft Sans Serif", 12f);
+                                        b.Click += new EventHandler(openFiles_click);
+                                        /*CheckBox c = new CheckBox();
+                                        c.Checked = true;
+                                        c.AutoSize = true;
+                                        c.CheckedChanged += new EventHandler(checkedChanged_click);
 
-                                // create ez_File and save it to our ez_Loc from our ez_Srv
-                                ez_File ez_file = new ez_File();
-                                ez_file.fi = new FileInfo(file.Name);
-                                ez_file.btn = b;
-                                //ez_file.cb = c;
-                                ez_location.files.Add(ez_file);
+                                        // set x si y for checkbox and button
+                                        c.Location = new Point(x + 3*x_spacing, y + y_spacing/4);*/
+                                        b.Location = new Point(x + 3 * x_spacing, y); // *4 if checkbox
+
+                                        // increment y
+                                        y += y_spacing;
+
+                                        this.panel_dynamic.Invoke(new MethodInvoker(delegate
+                                        {
+                                            //panel_dynamic.Controls.Add(c);
+                                        }));
+                                        this.panel_dynamic.Invoke(new MethodInvoker(delegate
+                                        {
+                                            panel_dynamic.Controls.Add(b);
+                                        }));
+
+                                        // create ez_File and save it to our ez_Loc from our ez_Srv
+                                        ez_File ez_file = new ez_File();
+                                        ez_file.fi = new FileInfo(file.Name);
+                                        ez_file.btn = b;
+                                        //ez_file.cb = c;
+                                        ez_location.files.Add(ez_file);
+                                    }
+                                }
+                                else
+                                {
+                                    // create button and checkbox
+                                    Button b = new Button();
+                                    b.Text = file.Name;
+                                    b.Name = serverTag + server + locationTag + location + fileTag + file.Name;
+                                    b.AutoSize = true;
+                                    b.ForeColor = Color.White;
+                                    b.Font = new Font("Microsoft Sans Serif", 12f);
+                                    b.Click += new EventHandler(openFiles_click);
+                                    /*CheckBox c = new CheckBox();
+                                    c.Checked = true;
+                                    c.AutoSize = true;
+                                    c.CheckedChanged += new EventHandler(checkedChanged_click);
+
+                                    // set x si y for checkbox and button
+                                    c.Location = new Point(x + 3*x_spacing, y + y_spacing/4);*/
+                                    b.Location = new Point(x + 3 * x_spacing, y); // *4 if checkbox
+
+                                    // increment y
+                                    y += y_spacing;
+
+                                    this.panel_dynamic.Invoke(new MethodInvoker(delegate
+                                    {
+                                        //panel_dynamic.Controls.Add(c);
+                                    }));
+                                    this.panel_dynamic.Invoke(new MethodInvoker(delegate
+                                    {
+                                        panel_dynamic.Controls.Add(b);
+                                    }));
+
+                                    // create ez_File and save it to our ez_Loc from our ez_Srv
+                                    ez_File ez_file = new ez_File();
+                                    ez_file.fi = new FileInfo(file.Name);
+                                    ez_file.btn = b;
+                                    //ez_file.cb = c;
+                                    ez_location.files.Add(ez_file);
+                                }
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        throw;
                         // msg: no directory
                     }
                 }
@@ -366,6 +443,63 @@ namespace ezFileSearch
                 panel_dynamic.VerticalScroll.Enabled = true;
                 panel_dynamic.AutoScroll = true;
             }));
+        }
+
+        private void replaceText(object sender, DoWorkEventArgs e)
+        {
+            string text    = string.Empty;
+            string newText = string.Empty;
+
+            this.tb_text.Invoke(new MethodInvoker(delegate
+            {
+                text = tb_text.Text;
+            }));
+            this.tb_newText.Invoke(new MethodInvoker(delegate
+            {
+                newText = tb_newText.Text;
+            }));
+
+            foreach (ez_Srv s in SR.servers)
+            {
+                foreach (ez_Loc l in s.locations)
+                {
+                    foreach (ez_File f in l.files)
+                    {
+                        replaceTextInFile(l.path + "\\" + f.fi.Name, text, newText);
+                    }
+                }
+            }
+        }
+
+        static public bool findTextInFile(string filePath, string searchText)
+        {
+            bool ret = false;
+
+            StreamReader reader = new StreamReader(filePath);
+            string content_original = reader.ReadToEnd();
+            string content_new = content_original;
+            reader.Close();
+
+            content_new = Regex.Replace(content_original, searchText, "****t3xt_f0und_h3r3****");
+
+            if (content_new != content_original)
+                ret = true;
+
+            
+            return ret;
+        }
+
+        static public void replaceTextInFile(string filePath, string searchText, string replaceText)
+        {
+            StreamReader reader = new StreamReader(filePath);
+            string content = reader.ReadToEnd();
+            reader.Close();
+
+            content = Regex.Replace(content, searchText, replaceText);
+
+            StreamWriter writer = new StreamWriter(filePath);
+            writer.Write(content);
+            writer.Close();
         }
         #endregion
 
@@ -556,6 +690,9 @@ namespace ezFileSearch
             j["locations"] = l;
             JArray p = new JArray(patterns);
             j["patterns"] = p;
+
+            j["text"]    = tb_text.Text;
+            j["newText"] = tb_newText.Text;
 
             j["editorIdx"] = editorIdx;
 

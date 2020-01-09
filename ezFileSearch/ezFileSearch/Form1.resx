@@ -117,11 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="cb_editor.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pb_replaceText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGUAAAAgCAYAAAAL6bYQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAABJ0RVh0U29mdHdhcmUAR3JlZW5zaG90XlUIBQAAARFJREFUaEPt2kkKwkAUhGGP
+        IQ6oaMR5SgvOC4f7H+mZUtIa7K2PWtTiQ4jJpn6SVddGs2DCJUYZTtbWG0yt2e5bvdERJ9gbu2P/ShRc
+        aHUyy8Yrm+cn2+yu4gR7Y3fsX4Z5RUEp/JHvr1E43MRBvn/LxvhSTT5R8AotimLhcLft8SHOsDv2R4cY
+        Bd+2UNRKPSA+8LagQzVK8SqlbhYf2F9RyCgKIUUhpCiEFIWQohBSFEKKQkhRCCkKIUUhpCiEFIWQohBS
+        FEKKQkhRCCkKIUUhpCiEfqLgaMsynJM3iw/sXzli1MtwGG+dvFl8lMeGYxRcaHeHr9/V9pJ8SP4De3/v
+        H6OUYbo64O0OeycPeAuTYE8Ml+rq7haTzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pb_findFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGUAAAAgCAYAAAAL6bYQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAABJ0RVh0U29mdHdhcmUAR3JlZW5zaG90XlUIBQAAARFJREFUaEPt2kkKwkAUhGGP

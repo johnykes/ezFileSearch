@@ -4,11 +4,12 @@
     "vitsql2017001"
   ],
   "locations": [
-    "C:\\temp",
-    "C:\\tsm"
+    "C:\\temp"
   ],
   "patterns": [
-    "*.opt"
+    "*.txt"
   ],
+  "text": "hahaha",
+  "newText": "hahaha",
   "editorIdx": 0
 }

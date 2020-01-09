@@ -30,11 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_main));
             this.panel_general = new System.Windows.Forms.Panel();
+            this.label_replaceText = new System.Windows.Forms.Label();
+            this.pb_replaceText = new System.Windows.Forms.PictureBox();
+            this.btn_test = new System.Windows.Forms.Button();
+            this.label_findFiles = new System.Windows.Forms.Label();
+            this.pb_findFiles = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_newText = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_text = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cb_editor = new System.Windows.Forms.ComboBox();
-            this.btn_test = new System.Windows.Forms.Button();
-            this.label_find_files = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_patternList = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,17 +49,24 @@
             this.tb_serverList = new System.Windows.Forms.TextBox();
             this.panel_dynamic = new System.Windows.Forms.Panel();
             this.panel_general.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_replaceText)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_findFiles)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_general
             // 
             this.panel_general.BackColor = System.Drawing.Color.Transparent;
+            this.panel_general.Controls.Add(this.label_replaceText);
+            this.panel_general.Controls.Add(this.pb_replaceText);
+            this.panel_general.Controls.Add(this.btn_test);
+            this.panel_general.Controls.Add(this.label_findFiles);
+            this.panel_general.Controls.Add(this.pb_findFiles);
+            this.panel_general.Controls.Add(this.label6);
+            this.panel_general.Controls.Add(this.tb_newText);
+            this.panel_general.Controls.Add(this.label5);
+            this.panel_general.Controls.Add(this.tb_text);
             this.panel_general.Controls.Add(this.label4);
             this.panel_general.Controls.Add(this.cb_editor);
-            this.panel_general.Controls.Add(this.btn_test);
-            this.panel_general.Controls.Add(this.label_find_files);
-            this.panel_general.Controls.Add(this.pictureBox1);
             this.panel_general.Controls.Add(this.label3);
             this.panel_general.Controls.Add(this.tb_patternList);
             this.panel_general.Controls.Add(this.label2);
@@ -62,8 +75,114 @@
             this.panel_general.Controls.Add(this.tb_serverList);
             this.panel_general.Location = new System.Drawing.Point(12, 12);
             this.panel_general.Name = "panel_general";
-            this.panel_general.Size = new System.Drawing.Size(363, 408);
+            this.panel_general.Size = new System.Drawing.Size(363, 594);
             this.panel_general.TabIndex = 1;
+            // 
+            // label_replaceText
+            // 
+            this.label_replaceText.AutoSize = true;
+            this.label_replaceText.BackColor = System.Drawing.Color.Transparent;
+            this.label_replaceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_replaceText.ForeColor = System.Drawing.Color.White;
+            this.label_replaceText.Location = new System.Drawing.Point(276, 532);
+            this.label_replaceText.Name = "label_replaceText";
+            this.label_replaceText.Size = new System.Drawing.Size(68, 20);
+            this.label_replaceText.TabIndex = 21;
+            this.label_replaceText.Text = "replace";
+            this.label_replaceText.Click += new System.EventHandler(this.label_replaceText_Click);
+            // 
+            // pb_replaceText
+            // 
+            this.pb_replaceText.Image = ((System.Drawing.Image)(resources.GetObject("pb_replaceText.Image")));
+            this.pb_replaceText.Location = new System.Drawing.Point(260, 526);
+            this.pb_replaceText.Name = "pb_replaceText";
+            this.pb_replaceText.Size = new System.Drawing.Size(101, 32);
+            this.pb_replaceText.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pb_replaceText.TabIndex = 20;
+            this.pb_replaceText.TabStop = false;
+            this.pb_replaceText.Click += new System.EventHandler(this.pb_replaceText_Click);
+            // 
+            // btn_test
+            // 
+            this.btn_test.Location = new System.Drawing.Point(185, 535);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(49, 23);
+            this.btn_test.TabIndex = 17;
+            this.btn_test.Text = "test";
+            this.btn_test.UseVisualStyleBackColor = true;
+            this.btn_test.Visible = false;
+            // 
+            // label_findFiles
+            // 
+            this.label_findFiles.AutoSize = true;
+            this.label_findFiles.BackColor = System.Drawing.Color.Transparent;
+            this.label_findFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_findFiles.ForeColor = System.Drawing.Color.White;
+            this.label_findFiles.Location = new System.Drawing.Point(272, 432);
+            this.label_findFiles.Name = "label_findFiles";
+            this.label_findFiles.Size = new System.Drawing.Size(77, 20);
+            this.label_findFiles.TabIndex = 19;
+            this.label_findFiles.Text = "find files";
+            this.label_findFiles.Click += new System.EventHandler(this.label_findFiles_Click);
+            // 
+            // pb_findFiles
+            // 
+            this.pb_findFiles.Image = ((System.Drawing.Image)(resources.GetObject("pb_findFiles.Image")));
+            this.pb_findFiles.Location = new System.Drawing.Point(260, 426);
+            this.pb_findFiles.Name = "pb_findFiles";
+            this.pb_findFiles.Size = new System.Drawing.Size(101, 32);
+            this.pb_findFiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pb_findFiles.TabIndex = 18;
+            this.pb_findFiles.TabStop = false;
+            this.pb_findFiles.Click += new System.EventHandler(this.pb_findFiles_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(3, 438);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "replace text";
+            // 
+            // tb_newText
+            // 
+            this.tb_newText.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.tb_newText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_newText.ForeColor = System.Drawing.SystemColors.Window;
+            this.tb_newText.Location = new System.Drawing.Point(3, 461);
+            this.tb_newText.Multiline = true;
+            this.tb_newText.Name = "tb_newText";
+            this.tb_newText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tb_newText.Size = new System.Drawing.Size(357, 59);
+            this.tb_newText.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(3, 338);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "text in file";
+            // 
+            // tb_text
+            // 
+            this.tb_text.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.tb_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_text.ForeColor = System.Drawing.SystemColors.Window;
+            this.tb_text.Location = new System.Drawing.Point(3, 361);
+            this.tb_text.Multiline = true;
+            this.tb_text.Name = "tb_text";
+            this.tb_text.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tb_text.Size = new System.Drawing.Size(357, 59);
+            this.tb_text.TabIndex = 13;
             // 
             // label4
             // 
@@ -71,7 +190,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(3, 350);
+            this.label4.Location = new System.Drawing.Point(3, 538);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 12;
@@ -86,46 +205,11 @@
             "Atom",
             "Notepad++",
             "Sublime"});
-            this.cb_editor.Location = new System.Drawing.Point(3, 373);
+            this.cb_editor.Location = new System.Drawing.Point(3, 561);
             this.cb_editor.Name = "cb_editor";
             this.cb_editor.Size = new System.Drawing.Size(357, 28);
             this.cb_editor.TabIndex = 11;
             this.cb_editor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_editor_KeyPress);
-            // 
-            // btn_test
-            // 
-            this.btn_test.Location = new System.Drawing.Point(204, 341);
-            this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(49, 23);
-            this.btn_test.TabIndex = 8;
-            this.btn_test.Text = "test";
-            this.btn_test.UseVisualStyleBackColor = true;
-            this.btn_test.Visible = false;
-            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
-            // 
-            // label_find_files
-            // 
-            this.label_find_files.AutoSize = true;
-            this.label_find_files.BackColor = System.Drawing.Color.Transparent;
-            this.label_find_files.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_find_files.ForeColor = System.Drawing.Color.White;
-            this.label_find_files.Location = new System.Drawing.Point(271, 344);
-            this.label_find_files.Name = "label_find_files";
-            this.label_find_files.Size = new System.Drawing.Size(77, 20);
-            this.label_find_files.TabIndex = 10;
-            this.label_find_files.Text = "find files";
-            this.label_find_files.Click += new System.EventHandler(this.label_find_files_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(259, 338);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
@@ -207,7 +291,7 @@
             this.panel_dynamic.AutoScroll = true;
             this.panel_dynamic.Location = new System.Drawing.Point(381, 12);
             this.panel_dynamic.Name = "panel_dynamic";
-            this.panel_dynamic.Size = new System.Drawing.Size(407, 409);
+            this.panel_dynamic.Size = new System.Drawing.Size(407, 595);
             this.panel_dynamic.TabIndex = 7;
             // 
             // form_main
@@ -215,7 +299,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(800, 424);
+            this.ClientSize = new System.Drawing.Size(800, 610);
             this.Controls.Add(this.panel_dynamic);
             this.Controls.Add(this.panel_general);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -225,7 +309,8 @@
             this.Load += new System.EventHandler(this.form_main_Load);
             this.panel_general.ResumeLayout(false);
             this.panel_general.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_replaceText)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_findFiles)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,11 +325,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_locationList;
         private System.Windows.Forms.Panel panel_dynamic;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label_find_files;
-        private System.Windows.Forms.Button btn_test;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cb_editor;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tb_text;
+        private System.Windows.Forms.Label label_replaceText;
+        private System.Windows.Forms.PictureBox pb_replaceText;
+        private System.Windows.Forms.Button btn_test;
+        private System.Windows.Forms.Label label_findFiles;
+        private System.Windows.Forms.PictureBox pb_findFiles;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tb_newText;
     }
 }
 
