@@ -14,7 +14,7 @@ PS: For now, Atom is the best choice, because Sublime and Notepad++ can't open f
 ## Installation
 Download ezFileSearch and then download the editors and add them in /ezFileSearch/Editors.
 
-## Usage
+## Usage example
 ![](https://github.com/johnykes/ezFileSearch/blob/master/ezFileSearch/assets/usageExample.png)
 
 ## Contributions
